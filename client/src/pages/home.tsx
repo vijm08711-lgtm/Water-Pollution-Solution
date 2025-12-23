@@ -135,36 +135,67 @@ export default function Home() {
       </section>
 
       {/* Introduction Content */}
-      <section className="py-20 bg-secondary/30">
-        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-4xl font-serif font-bold mb-6 text-foreground">Why This Matters</h2>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Water is the essence of life, yet in India, our most sacred rivers are facing an unprecedented crisis. 
-              Rapid urbanization, industrial growth, and lack of proper waste management have turned lifelines into health hazards.
-            </p>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              This platform aims to educate students and citizens about the severity of water pollution, its causes, 
-              impact on health and economy, and the steps being taken to restore our water bodies.
-            </p>
+      <section className="py-24 bg-gradient-to-b from-secondary/30 via-background to-primary/5 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-0" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -z-0" />
+        
+        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-8 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Why This Matters</h2>
+            
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed font-light">
+                Water is the essence of life, yet in India, our most sacred rivers are facing an unprecedented crisis. 
+                Rapid urbanization, industrial growth, and lack of proper waste management have turned lifelines into health hazards.
+              </p>
+              <p className="text-lg text-muted-foreground mb-10 leading-relaxed font-light">
+                This platform aims to educate students and citizens about the severity of water pollution, its causes, 
+                impact on health and economy, and the steps being taken to restore our water bodies.
+              </p>
+            </motion.div>
+            
             <Link href="/effects">
-              <Button variant="link" className="text-primary p-0 text-lg font-semibold group">
-                Learn about the effects <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <Button className="bg-gradient-to-r from-primary to-accent hover:shadow-2xl text-white border-0 text-lg px-8 py-6 h-auto rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105">
+                Learn about the effects <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-          </div>
-          <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl opacity-50" />
-            <Card className="relative border-none shadow-xl overflow-hidden">
-              <CardContent className="p-0">
-                <img 
-                  src="https://images.unsplash.com/photo-1561587428-ee6260df341a?q=80&w=1000&auto=format&fit=crop" 
-                  alt="Indian River" 
-                  className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700"
-                />
-              </CardContent>
-            </Card>
-          </div>
+          </motion.div>
+          
+          <motion.div 
+            className="relative"
+            initial={{ opacity: 0, x: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="absolute -inset-6 bg-gradient-to-r from-primary/30 via-accent/30 to-primary/20 rounded-3xl blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+            <motion.div
+              whileHover={{ y: -12 }}
+              transition={{ duration: 0.4 }}
+            >
+              <Card className="relative border-2 border-white/50 shadow-2xl overflow-hidden backdrop-blur-sm group">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                <CardContent className="p-0 relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1561587428-ee6260df341a?q=80&w=1000&auto=format&fit=crop" 
+                    alt="Indian River" 
+                    className="w-full h-[450px] object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                </CardContent>
+              </Card>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </Layout>
