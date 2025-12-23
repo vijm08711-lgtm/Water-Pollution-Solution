@@ -91,37 +91,42 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </main>
 
-      <footer className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground mt-20 py-16">
-        <div className="container mx-auto px-4 grid md:grid-cols-3 gap-8">
+      <footer className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white mt-20 py-16 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          <div className="absolute top-20 left-0 w-96 h-96 bg-primary/30 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 grid md:grid-cols-3 gap-8 relative z-10">
           <div>
-            <h3 className="font-serif text-4xl font-bold mb-4 flex items-center gap-3">
-              <Droplets className="h-8 w-8" /> CleanWaterIndia
+            <h3 className="font-serif text-4xl font-bold mb-4 flex items-center gap-3 bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent">
+              <Droplets className="h-8 w-8 text-cyan-400" /> CleanWaterIndia
             </h3>
-            <p className="opacity-90 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed font-light">
               An educational initiative to raise awareness about water pollution issues in India, 
               focusing on causes, effects, and sustainable solutions.
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-lg mb-4">Quick Links</h4>
+            <h4 className="font-bold text-lg mb-4 text-cyan-300">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link href="/causes"><a className="hover:underline opacity-90">Causes of Pollution</a></Link></li>
-              <li><Link href="/solutions"><a className="hover:underline opacity-90">Sustainable Solutions</a></Link></li>
-              <li><Link href="/actions"><a className="hover:underline opacity-90">Government Initiatives</a></Link></li>
-              <li><Link href="/statistics"><a className="hover:underline opacity-90">Data & Statistics</a></Link></li>
+              <li><Link href="/causes"><a className="text-gray-300 hover:text-cyan-300 transition-colors font-light">Causes of Pollution</a></Link></li>
+              <li><Link href="/solutions"><a className="text-gray-300 hover:text-cyan-300 transition-colors font-light">Sustainable Solutions</a></Link></li>
+              <li><Link href="/actions"><a className="text-gray-300 hover:text-cyan-300 transition-colors font-light">Government Initiatives</a></Link></li>
+              <li><Link href="/statistics"><a className="text-gray-300 hover:text-cyan-300 transition-colors font-light">Data & Statistics</a></Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-lg mb-4">Contact</h4>
-            <p className="opacity-90 mb-2">Have questions or want to contribute?</p>
+            <h4 className="font-bold text-lg mb-4 text-cyan-300">Contact</h4>
+            <p className="text-gray-300 mb-2 font-light">Have questions or want to contribute?</p>
             <Link href="/contact">
-              <Button variant="secondary" className="mt-2 w-full md:w-auto">
+              <Button className="mt-2 w-full md:w-auto bg-gradient-to-r from-cyan-400 to-blue-400 hover:from-cyan-500 hover:to-blue-500 text-slate-900 font-semibold border-0 shadow-lg transition-all hover:shadow-2xl">
                 Get in Touch
               </Button>
             </Link>
           </div>
         </div>
-        <div className="container mx-auto px-4 mt-12 pt-8 border-t border-primary-foreground/20 text-center opacity-70 text-sm">
+        <div className="container mx-auto px-4 mt-12 pt-8 border-t border-white/10 text-center text-gray-400 text-sm font-light">
           © 2024 CleanWaterIndia. Educational Project.
         </div>
       </footer>
