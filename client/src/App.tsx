@@ -11,7 +11,6 @@ import PollutedCities from "@/pages/polluted-cities";
 import Effects from "@/pages/effects";
 import GovernmentActions from "@/pages/government-actions";
 import Solutions from "@/pages/solutions";
-import StudentAction from "@/pages/student-action";
 import Statistics from "@/pages/statistics";
 import Contact from "@/pages/contact";
 
@@ -25,7 +24,6 @@ function Router() {
       <Route path="/effects" component={Effects} />
       <Route path="/actions" component={GovernmentActions} />
       <Route path="/solutions" component={Solutions} />
-      <Route path="/action" component={StudentAction} />
       <Route path="/statistics" component={Statistics} />
       <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
