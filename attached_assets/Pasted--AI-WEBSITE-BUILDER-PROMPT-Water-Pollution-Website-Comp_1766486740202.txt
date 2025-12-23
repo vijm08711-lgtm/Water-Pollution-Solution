@@ -1,0 +1,223 @@
+🌊 AI WEBSITE BUILDER PROMPT
+Water Pollution Website – Complete Blueprint (India Focused)
+
+Build a clean, modern, educational website about Water Pollution, focused mainly on India, suitable for a college/student environmental project.
+The website should be informative, visual, and interactive, with a blue environmental theme and easy language.
+
+🎯 Website Goal
+
+Create awareness about water pollution
+
+Explain causes, effects, Indian case studies, statistics, laws, and solutions
+
+Encourage student participation and responsibility
+
+📄 WEBSITE SECTIONS / PAGES
+1️⃣ Home Page
+
+Purpose: First impression + awareness
+
+Sections:
+
+🔹 Hero Banner
+
+Title: “Water Pollution: A Silent Threat”
+
+Subtitle: “Protecting water today means saving life tomorrow”
+
+🔹 Call-to-Action Buttons
+
+“Learn Causes”
+
+“See Indian Case Studies”
+
+🔹 Short Introduction (2–3 lines)
+
+Brief explanation of why water pollution is a serious issue globally and in India
+
+2️⃣ What is Water Pollution?
+
+Purpose: Basic understanding
+
+Content:
+
+Simple definition of water pollution
+
+Types of Water Pollution (with small icons):
+
+Surface water pollution
+
+Groundwater pollution
+
+Chemical pollution
+
+Biological pollution
+
+3️⃣ Causes of Water Pollution
+
+Purpose: Explain reasons clearly
+
+Sub-sections:
+
+Industrial waste
+
+Domestic sewage
+
+Plastic waste
+
+Agricultural runoff (fertilizers & pesticides)
+
+Oil spills & urban drainage
+
+📌 Add real-life Indian examples for better understanding.
+
+4️⃣ Effects of Water Pollution
+
+Purpose: Show impact clearly
+
+Layout:
+
+Divide into 3 columns:
+
+👨‍👩‍👧 Human Health
+
+Cholera
+
+Typhoid
+
+Skin diseases
+
+🐟 Aquatic Life
+
+Fish deaths
+
+Loss of biodiversity
+
+🌾 Environment
+
+Soil contamination
+
+Ecosystem damage
+
+5️⃣ Water Pollution in India ⭐ (Key Section)
+
+Purpose: Local relevance
+
+Content Structure:
+
+🔹 Polluted Rivers
+
+Ganga
+
+Yamuna
+
+Musi
+
+Vrishabhavathi
+
+🔹 Polluted Lakes
+
+Bellandur Lake (Bengaluru)
+
+Ulsoor Lake
+
+📌 Add short case studies (4–5 lines each)
+📌 Display using cards or an India map view
+
+6️⃣ Statistics & Facts
+
+Purpose: Make website factual and strong
+
+Examples:
+
+Percentage of untreated sewage in India
+
+Number of polluted river stretches
+
+Percentage of water-related diseases
+
+📊 Display using:
+
+Animated counters
+
+Bar charts
+
+Infographics
+
+7️⃣ Government Actions & Laws
+
+Purpose: Awareness + credibility
+
+Include:
+
+Water (Prevention & Control of Pollution) Act, 1974
+
+Central & State Pollution Control Boards
+
+Government Programs:
+
+Namami Gange Programme
+
+Swachh Bharat Mission
+
+8️⃣ Solutions & Prevention
+
+Purpose: Hope and responsibility
+
+Divide into:
+
+🔹 Government solutions
+🔹 Industry responsibility
+🔹 Public & individual actions
+
+✔️ Use bullet points for clarity
+
+9️⃣ How Students Can Help
+
+Purpose: Engagement
+
+Ideas:
+
+Reduce plastic use
+
+Save water at home and college
+
+Participate in clean-up drives
+
+Spread awareness through social media
+
+📌 Add interactive checklist UI
+
+🔟 Interactive Section
+
+Purpose: Make the website engaging
+
+Choose at least ONE interactive feature:
+
+Quiz: “Is this polluting water?”
+
+Report water pollution form
+
+Feedback & suggestion form
+
+🎨 Design & UI Style
+
+Blue & white environmental theme 🌊
+
+Clean, modern, student-friendly design
+
+Mobile & desktop responsive
+
+Simple icons and illustrations
+
+Light animations (optional)
+
+🧩 Optional Enhancements
+
+India map with polluted locations
+
+Icon-based sections
+
+Footer with environmental quote
+
+Call-to-action: “Save Water, Save Life”

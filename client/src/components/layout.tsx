@@ -7,12 +7,14 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { label: "Home", path: "/", icon: Droplets },
+  { label: "About", path: "/about", icon: Activity },
   { label: "Causes", path: "/causes", icon: Building2 },
-  { label: "Polluted Cities", path: "/cities", icon: Building2 },
+  { label: "Cities", path: "/cities", icon: Building2 },
   { label: "Effects", path: "/effects", icon: Activity },
-  { label: "Actions", path: "/actions", icon: Gavel },
   { label: "Solutions", path: "/solutions", icon: Leaf },
+  { label: "Student Action", path: "/action", icon: Leaf },
   { label: "Statistics", path: "/statistics", icon: BarChart3 },
+  { label: "Laws", path: "/actions", icon: Gavel },
   { label: "Contact", path: "/contact", icon: Phone },
 ];
 

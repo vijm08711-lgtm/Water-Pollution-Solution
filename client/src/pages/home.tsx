@@ -27,20 +27,20 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 tracking-tight">
-              Reviving India's Lifelines
+              Water Pollution: A Silent Threat
             </h1>
             <p className="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto mb-8 font-light leading-relaxed">
-              Understanding the crisis of water pollution in India and paving the path towards a cleaner, sustainable future.
+              Protecting water today means saving life tomorrow
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/causes">
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-white border-0 text-lg px-8 py-6 h-auto">
-                  Explore Causes
+                  Learn Causes
                 </Button>
               </Link>
-              <Link href="/solutions">
+              <Link href="/cities">
                 <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm border-white/50 text-white hover:bg-white hover:text-primary text-lg px-8 py-6 h-auto">
-                  View Solutions
+                  See Indian Case Studies
                 </Button>
               </Link>
             </div>
