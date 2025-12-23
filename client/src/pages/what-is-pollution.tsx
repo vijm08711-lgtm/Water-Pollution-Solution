@@ -64,7 +64,7 @@ export default function WhatIsPollution() {
           <Card className="hover:shadow-lg transition-shadow border-none">
             <CardHeader>
               <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center text-red-600 mb-4">
-                <Worm className="h-6 w-6" />
+                <Virus className="h-6 w-6" />
               </div>
               <CardTitle className="text-lg font-serif">Biological Pollution</CardTitle>
             </CardHeader>
