@@ -1,0 +1,129 @@
+import { Link, useLocation } from "wouter";
+import { Menu, X, Droplets, Leaf, Activity, Building2, Gavel, BarChart3, Phone } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
+
+const navItems = [
+  { label: "Home", path: "/", icon: Droplets },
+  { label: "Causes", path: "/causes", icon: Building2 },
+  { label: "Polluted Cities", path: "/cities", icon: Building2 },
+  { label: "Effects", path: "/effects", icon: Activity },
+  { label: "Actions", path: "/actions", icon: Gavel },
+  { label: "Solutions", path: "/solutions", icon: Leaf },
+  { label: "Statistics", path: "/statistics", icon: BarChart3 },
+  { label: "Contact", path: "/contact", icon: Phone },
+];
+
+export function Layout({ children }: { children: React.ReactNode }) {
+  const [location] = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div className="min-h-screen flex flex-col font-sans">
+      <header
+        className={cn(
+          "fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent",
+          scrolled ? "bg-background/80 backdrop-blur-md border-border py-2 shadow-sm" : "bg-transparent py-4"
+        )}
+      >
+        <div className="container mx-auto px-4 flex items-center justify-between">
+          <Link href="/">
+            <a className="flex items-center gap-2 text-2xl font-serif font-bold text-primary cursor-pointer">
+              <Droplets className="h-8 w-8" />
+              <span>CleanWater<span className="text-foreground">India</span></span>
+            </a>
+          </Link>
+
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-1">
+            {navItems.map((item) => (
+              <Link key={item.path} href={item.path}>
+                <a
+                  className={cn(
+                    "px-3 py-2 rounded-md text-sm font-medium transition-colors hover:text-primary hover:bg-primary/5",
+                    location === item.path ? "text-primary bg-primary/10 font-semibold" : "text-muted-foreground"
+                  )}
+                >
+                  {item.label}
+                </a>
+              </Link>
+            ))}
+          </nav>
+
+          {/* Mobile Nav */}
+          <Sheet>
+            <SheetTrigger asChild className="lg:hidden">
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent>
+              <div className="flex flex-col gap-4 mt-8">
+                {navItems.map((item) => (
+                  <Link key={item.path} href={item.path}>
+                    <a
+                      className={cn(
+                        "flex items-center gap-4 px-4 py-3 rounded-lg text-lg font-medium transition-colors",
+                        location === item.path ? "bg-primary/10 text-primary" : "text-muted-foreground hover:bg-muted"
+                      )}
+                    >
+                      <item.icon className="h-5 w-5" />
+                      {item.label}
+                    </a>
+                  </Link>
+                ))}
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </header>
+
+      <main className="flex-1 pt-16">
+        {children}
+      </main>
+
+      <footer className="bg-primary text-primary-foreground mt-20 py-12">
+        <div className="container mx-auto px-4 grid md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="font-serif text-2xl font-bold mb-4 flex items-center gap-2">
+              <Droplets className="h-6 w-6" /> CleanWaterIndia
+            </h3>
+            <p className="opacity-90 leading-relaxed">
+              An educational initiative to raise awareness about water pollution issues in India, 
+              focusing on causes, effects, and sustainable solutions.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-bold text-lg mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li><Link href="/causes"><a className="hover:underline opacity-90">Causes of Pollution</a></Link></li>
+              <li><Link href="/solutions"><a className="hover:underline opacity-90">Sustainable Solutions</a></Link></li>
+              <li><Link href="/actions"><a className="hover:underline opacity-90">Government Initiatives</a></Link></li>
+              <li><Link href="/statistics"><a className="hover:underline opacity-90">Data & Statistics</a></Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-bold text-lg mb-4">Contact</h4>
+            <p className="opacity-90 mb-2">Have questions or want to contribute?</p>
+            <Link href="/contact">
+              <Button variant="secondary" className="mt-2 w-full md:w-auto">
+                Get in Touch
+              </Button>
+            </Link>
+          </div>
+        </div>
+        <div className="container mx-auto px-4 mt-12 pt-8 border-t border-primary-foreground/20 text-center opacity-70 text-sm">
+          © 2024 CleanWaterIndia. Educational Project.
+        </div>
+      </footer>
+    </div>
+  );
+}
