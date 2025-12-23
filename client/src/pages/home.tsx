@@ -10,79 +10,125 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <img 
             src={heroImage} 
             alt="Pristine River" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-background" />
         </div>
         
-        <div className="container relative z-10 px-4 text-center text-white">
+        <div className="container relative z-10 px-4">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 tracking-tight">
-              Water Pollution: A Silent Threat
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="inline-block mb-6"
+            >
+              <span className="px-6 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-sm font-semibold">
+                ✨ Save Our Waters
+              </span>
+            </motion.div>
+            
+            <h1 className="text-6xl md:text-8xl font-serif font-bold mb-6 tracking-tight text-white drop-shadow-lg">
+              Water Pollution: <br className="hidden md:block" /> A Silent Threat
             </h1>
-            <p className="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto mb-8 font-light leading-relaxed">
+            
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="text-2xl md:text-3xl opacity-95 max-w-3xl mx-auto mb-12 font-light leading-relaxed text-white drop-shadow-md"
+            >
               Protecting water today means saving life tomorrow
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            </motion.p>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="flex flex-col sm:flex-row gap-6 justify-center"
+            >
               <Link href="/causes">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white border-0 text-lg px-8 py-6 h-auto">
-                  Learn Causes
+                <Button size="lg" className="bg-gradient-to-r from-primary to-accent hover:shadow-2xl text-white border-0 text-lg px-10 py-7 h-auto rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105">
+                  Explore Causes
                 </Button>
               </Link>
               <Link href="/cities">
-                <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm border-white/50 text-white hover:bg-white hover:text-primary text-lg px-8 py-6 h-auto">
-                  See Indian Case Studies
+                <Button size="lg" className="bg-white/20 backdrop-blur-md hover:bg-white/30 border border-white/50 text-white text-lg px-10 py-7 h-auto rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105">
+                  Case Studies in India
                 </Button>
               </Link>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Key Stats Preview */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
+      <section className="py-24 bg-background relative">
+        <div className="absolute inset-0 opacity-40 pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">The Crisis in Numbers</h2>
+            <p className="text-xl text-muted-foreground">Sobering facts about water pollution in India</p>
+          </div>
+          
           <div className="grid md:grid-cols-3 gap-8">
             <motion.div 
-              whileHover={{ y: -5 }}
-              className="p-8 rounded-2xl bg-white border border-border shadow-sm text-center"
+              whileHover={{ y: -8, boxShadow: "0 25px 50px -12px rgba(205, 95, 42, 0.15)" }}
+              className="p-8 rounded-3xl bg-gradient-to-br from-white to-blue-50/50 border border-border shadow-lg hover:border-primary/50 transition-all duration-300 text-center group"
             >
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
-                <Droplets className="h-8 w-8" />
-              </div>
-              <h3 className="text-4xl font-bold text-primary mb-2">70%</h3>
-              <p className="text-muted-foreground">of surface water in India is unfit for consumption</p>
+              <motion.div 
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6 }}
+                className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6"
+              >
+                <Droplets className="h-10 w-10 text-primary" />
+              </motion.div>
+              <h3 className="text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-3">70%</h3>
+              <p className="text-muted-foreground text-lg">of surface water in India is unfit for consumption</p>
             </motion.div>
             
             <motion.div 
-              whileHover={{ y: -5 }}
-              className="p-8 rounded-2xl bg-white border border-border shadow-sm text-center"
+              whileHover={{ y: -8, boxShadow: "0 25px 50px -12px rgba(245, 158, 11, 0.15)" }}
+              className="p-8 rounded-3xl bg-gradient-to-br from-white to-amber-50/50 border border-border shadow-lg hover:border-amber-500/50 transition-all duration-300 text-center group"
             >
-              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6 text-amber-600">
-                <AlertTriangle className="h-8 w-8" />
-              </div>
-              <h3 className="text-4xl font-bold text-amber-600 mb-2">40M</h3>
-              <p className="text-muted-foreground">Liters of wastewater enters rivers daily</p>
+              <motion.div 
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6 }}
+                className="w-20 h-20 bg-gradient-to-br from-amber-200/30 to-amber-100/20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+              >
+                <AlertTriangle className="h-10 w-10 text-amber-600" />
+              </motion.div>
+              <h3 className="text-5xl font-bold bg-gradient-to-r from-amber-600 to-amber-500 bg-clip-text text-transparent mb-3">40M</h3>
+              <p className="text-muted-foreground text-lg">Liters of wastewater enters rivers daily</p>
             </motion.div>
 
             <motion.div 
-              whileHover={{ y: -5 }}
-              className="p-8 rounded-2xl bg-white border border-border shadow-sm text-center"
+              whileHover={{ y: -8, boxShadow: "0 25px 50px -12px rgba(34, 197, 94, 0.15)" }}
+              className="p-8 rounded-3xl bg-gradient-to-br from-white to-green-50/50 border border-border shadow-lg hover:border-green-500/50 transition-all duration-300 text-center group"
             >
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600">
-                <Leaf className="h-8 w-8" />
-              </div>
-              <h3 className="text-4xl font-bold text-green-600 mb-2">Top 5</h3>
-              <p className="text-muted-foreground">Priority of Namami Gange Mission</p>
+              <motion.div 
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6 }}
+                className="w-20 h-20 bg-gradient-to-br from-green-200/30 to-green-100/20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+              >
+                <Leaf className="h-10 w-10 text-green-600" />
+              </motion.div>
+              <h3 className="text-5xl font-bold bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent mb-3">Top 5</h3>
+              <p className="text-muted-foreground text-lg">Priority of Namami Gange Mission</p>
             </motion.div>
           </div>
         </div>

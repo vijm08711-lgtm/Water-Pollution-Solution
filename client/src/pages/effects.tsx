@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent } from "@/components/ui/card";
 import { HeartPulse, Sprout, DollarSign, Fish } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Effects() {
   return (

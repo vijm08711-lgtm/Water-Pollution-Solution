@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Waves, Droplets, Beaker, Worm } from "lucide-react";
+import { Waves, Droplets, Beaker, Virus } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function WhatIsPollution() {
   return (

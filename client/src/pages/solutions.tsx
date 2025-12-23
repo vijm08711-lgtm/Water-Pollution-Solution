@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Recycle, TreePine, Megaphone, Droplet } from "lucide-react";
+import { motion } from "framer-motion";
 import solutionImage from "@assets/generated_images/water_treatment_technology_eco_friendly.png";
 
 export default function Solutions() {
