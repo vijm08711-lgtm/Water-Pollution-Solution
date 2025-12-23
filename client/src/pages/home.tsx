@@ -138,7 +138,7 @@ export default function Home() {
       <section className="py-20 bg-secondary/30">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl font-serif font-bold mb-6 text-white">Why This Matters</h2>
+            <h2 className="text-4xl font-serif font-bold mb-6 text-foreground">Why This Matters</h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
               Water is the essence of life, yet in India, our most sacred rivers are facing an unprecedented crisis. 
               Rapid urbanization, industrial growth, and lack of proper waste management have turned lifelines into health hazards.
