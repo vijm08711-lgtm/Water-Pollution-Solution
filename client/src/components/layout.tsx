@@ -91,11 +91,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </main>
 
-      <footer className="bg-primary text-primary-foreground mt-20 py-12">
+      <footer className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground mt-20 py-16">
         <div className="container mx-auto px-4 grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="font-serif text-2xl font-bold mb-4 flex items-center gap-2">
-              <Droplets className="h-6 w-6" /> CleanWaterIndia
+            <h3 className="font-serif text-4xl font-bold mb-4 flex items-center gap-3">
+              <Droplets className="h-8 w-8" /> CleanWaterIndia
             </h3>
             <p className="opacity-90 leading-relaxed">
               An educational initiative to raise awareness about water pollution issues in India, 
