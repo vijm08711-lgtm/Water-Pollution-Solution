@@ -25,6 +25,10 @@ import NutrientPollution from "@/pages/pollution-nutrient";
 import PlasticPollution from "@/pages/pollution-plastic";
 import ThermalPollution from "@/pages/pollution-thermal";
 import OilPollution from "@/pages/pollution-oil";
+import IndustrialWasteCause from "@/pages/cause-industrial";
+import DomesticSewageCause from "@/pages/cause-domestic";
+import AgriculturalRunoffCause from "@/pages/cause-agricultural";
+import ReligiousSocialCause from "@/pages/cause-religious";
 
 function Router() {
   return (
@@ -50,6 +54,10 @@ function Router() {
       <Route path="/pollution/plastic" component={PlasticPollution} />
       <Route path="/pollution/thermal" component={ThermalPollution} />
       <Route path="/pollution/oil" component={OilPollution} />
+      <Route path="/cause/industrial" component={IndustrialWasteCause} />
+      <Route path="/cause/domestic" component={DomesticSewageCause} />
+      <Route path="/cause/agricultural" component={AgriculturalRunoffCause} />
+      <Route path="/cause/religious" component={ReligiousSocialCause} />
       <Route component={NotFound} />
     </Switch>
   );
