@@ -5,6 +5,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { ArrowRight, Droplets, AlertTriangle, Leaf } from "lucide-react";
 import heroImage from "@assets/generated_images/pristine_river_water_in_india_sunlight.png";
+import sdg6 from "@assets/generated_images/sdg_6_clean_water_goal.png";
+import sdg13 from "@assets/generated_images/sdg_13_climate_action.png";
+import sdg14 from "@assets/generated_images/sdg_14_life_below_water.png";
+import sdg15 from "@assets/generated_images/sdg_15_life_on_land.png";
 
 export default function Home() {
   return (
@@ -196,6 +200,98 @@ export default function Home() {
               </Card>
             </motion.div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* SDG Section */}
+      <section className="py-24 bg-primary/5">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl font-serif font-bold mb-6">Aligned with UN Sustainable Development Goals</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Our mission directly supports the UN's sustainable development goals for a better, more sustainable future.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8 }}
+            >
+              <Card className="border-none shadow-lg hover:shadow-2xl transition-all h-full overflow-hidden group">
+                <div className="relative h-48 overflow-hidden">
+                  <img src={sdg6} alt="SDG 6" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <CardContent className="p-6 text-center">
+                  <h3 className="text-xl font-bold mb-2 font-serif">SDG 6: Clean Water & Sanitation</h3>
+                  <p className="text-muted-foreground text-sm">Ensure access to water and sanitation for all</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8 }}
+            >
+              <Card className="border-none shadow-lg hover:shadow-2xl transition-all h-full overflow-hidden group">
+                <div className="relative h-48 overflow-hidden">
+                  <img src={sdg13} alt="SDG 13" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <CardContent className="p-6 text-center">
+                  <h3 className="text-xl font-bold mb-2 font-serif">SDG 13: Climate Action</h3>
+                  <p className="text-muted-foreground text-sm">Combat climate change and its impacts</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8 }}
+            >
+              <Card className="border-none shadow-lg hover:shadow-2xl transition-all h-full overflow-hidden group">
+                <div className="relative h-48 overflow-hidden">
+                  <img src={sdg14} alt="SDG 14" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <CardContent className="p-6 text-center">
+                  <h3 className="text-xl font-bold mb-2 font-serif">SDG 14: Life Below Water</h3>
+                  <p className="text-muted-foreground text-sm">Protect and sustain ocean and marine life</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8 }}
+            >
+              <Card className="border-none shadow-lg hover:shadow-2xl transition-all h-full overflow-hidden group">
+                <div className="relative h-48 overflow-hidden">
+                  <img src={sdg15} alt="SDG 15" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <CardContent className="p-6 text-center">
+                  <h3 className="text-xl font-bold mb-2 font-serif">SDG 15: Life on Land</h3>
+                  <p className="text-muted-foreground text-sm">Protect terrestrial ecosystems and biodiversity</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
         </div>
       </section>
     </Layout>
