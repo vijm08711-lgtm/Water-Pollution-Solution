@@ -3,6 +3,8 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { MapPin, AlertCircle } from "lucide-react";
+import { Link } from "wouter";
+import { motion } from "framer-motion";
 
 const cities = [
   {
@@ -65,46 +67,60 @@ export default function PollutedCities() {
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {cities.map((city) => (
-            <Card key={city.name} className="overflow-hidden border-border/50 hover:shadow-xl transition-all duration-300 group">
-              <div className="relative h-48 overflow-hidden">
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10" />
-                <img 
-                  src={city.image} 
-                  alt={city.name} 
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                />
-                <Badge className={`absolute top-4 right-4 z-20 ${
-                  city.status === 'Critical' ? 'bg-red-600' : 
-                  city.status === 'Severe' ? 'bg-orange-500' : 'bg-yellow-500'
-                }`}>
-                  {city.status}
-                </Badge>
-              </div>
-              <CardHeader>
-                <div className="flex justify-between items-start">
-                  <div>
-                    <CardTitle className="text-2xl font-serif mb-1">{city.name}</CardTitle>
-                    <CardDescription className="flex items-center gap-1 text-primary font-medium">
-                      <MapPin className="h-4 w-4" /> {city.river}
-                    </CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
-                  {city.desc}
-                </p>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm font-medium">
-                    <span>Pollution Index</span>
-                    <span className="text-destructive">{city.pollutionLevel}/100</span>
-                  </div>
-                  <Progress value={city.pollutionLevel} className="h-2 bg-secondary" indicatorClassName="bg-destructive" />
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+          {cities.map((city, index) => {
+            const citySlug = city.name.toLowerCase().replace(" ", "-");
+            return (
+              <Link key={city.name} href={`/city/${citySlug}`}>
+                <a>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <Card className="overflow-hidden border-border/50 hover:shadow-xl transition-all duration-300 group cursor-pointer h-full">
+                      <div className="relative h-48 overflow-hidden">
+                        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10" />
+                        <img 
+                          src={city.image} 
+                          alt={city.name} 
+                          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <Badge className={`absolute top-4 right-4 z-20 ${
+                          city.status === 'Critical' ? 'bg-red-600' : 
+                          city.status === 'Severe' ? 'bg-orange-500' : 'bg-yellow-500'
+                        }`}>
+                          {city.status}
+                        </Badge>
+                      </div>
+                      <CardHeader>
+                        <div className="flex justify-between items-start">
+                          <div>
+                            <CardTitle className="text-2xl font-serif mb-1">{city.name}</CardTitle>
+                            <CardDescription className="flex items-center gap-1 text-primary font-medium">
+                              <MapPin className="h-4 w-4" /> {city.river}
+                            </CardDescription>
+                          </div>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
+                          {city.desc}
+                        </p>
+                        <div className="space-y-2">
+                          <div className="flex justify-between text-sm font-medium">
+                            <span>Pollution Index</span>
+                            <span className="text-destructive">{city.pollutionLevel}/100</span>
+                          </div>
+                          <Progress value={city.pollutionLevel} className="h-2 bg-secondary" indicatorClassName="bg-destructive" />
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                </a>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </Layout>

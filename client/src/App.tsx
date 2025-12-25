@@ -29,6 +29,16 @@ import IndustrialWasteCause from "@/pages/cause-industrial";
 import DomesticSewageCause from "@/pages/cause-domestic";
 import AgriculturalRunoffCause from "@/pages/cause-agricultural";
 import ReligiousSocialCause from "@/pages/cause-religious";
+import DelhiCity from "@/pages/city-delhi";
+import KanpurCity from "@/pages/city-kanpur";
+import VaranasiCity from "@/pages/city-varanasi";
+import MumbaiCity from "@/pages/city-mumbai";
+import BengaluruCity from "@/pages/city-bengaluru";
+import HyderabadCity from "@/pages/city-hyderabad";
+import WastewaterTreatmentSolution from "@/pages/solution-treatment";
+import AfforestationSolution from "@/pages/solution-afforestation";
+import AwarenessEducationSolution from "@/pages/solution-awareness";
+import RainwaterHarvestingSolution from "@/pages/solution-rainwater";
 
 function Router() {
   return (
@@ -58,6 +68,16 @@ function Router() {
       <Route path="/cause/domestic" component={DomesticSewageCause} />
       <Route path="/cause/agricultural" component={AgriculturalRunoffCause} />
       <Route path="/cause/religious" component={ReligiousSocialCause} />
+      <Route path="/city/delhi" component={DelhiCity} />
+      <Route path="/city/kanpur" component={KanpurCity} />
+      <Route path="/city/varanasi" component={VaranasiCity} />
+      <Route path="/city/mumbai" component={MumbaiCity} />
+      <Route path="/city/bengaluru" component={BengaluruCity} />
+      <Route path="/city/hyderabad" component={HyderabadCity} />
+      <Route path="/solution/treatment" component={WastewaterTreatmentSolution} />
+      <Route path="/solution/afforestation" component={AfforestationSolution} />
+      <Route path="/solution/awareness" component={AwarenessEducationSolution} />
+      <Route path="/solution/rainwater" component={RainwaterHarvestingSolution} />
       <Route component={NotFound} />
     </Switch>
   );
