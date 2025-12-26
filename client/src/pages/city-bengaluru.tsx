@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import img from "@assets/generated_images/toxic_algae_bloom_lake.png";
+import img from "@assets/generated_images/bengaluru_bellandur_lake_foam.png";
 
 export default function BengaluruCity() {
   return (

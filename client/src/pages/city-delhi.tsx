@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import img from "@assets/generated_images/polluted_river_industrial_city.png";
+import img from "@assets/generated_images/delhi_yamuna_river_pollution.png";
 
 export default function DelhiCity() {
   return (

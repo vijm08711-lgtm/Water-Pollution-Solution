@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import img from "@assets/generated_images/coastal_city_water_pollution.png";
+import img from "@assets/generated_images/mumbai_mithi_river_sludge.png";
 
 export default function MumbaiCity() {
   return (

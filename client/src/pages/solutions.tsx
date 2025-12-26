@@ -2,10 +2,11 @@ import { Layout } from "@/components/layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Recycle, TreePine, Megaphone, Droplet } from "lucide-react";
 import { motion } from "framer-motion";
-import { Link } from "wouter";
+import { useLocation } from "wouter";
 import solutionImage from "@assets/generated_images/water_treatment_technology_eco_friendly.png";
 
 export default function Solutions() {
+  const [, navigate] = useLocation();
   return (
     <Layout>
       <div className="container mx-auto px-4 py-16">
@@ -33,10 +34,10 @@ export default function Solutions() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Link href="/solution/treatment">
-            <a>
-              <motion.div whileHover={{ y: -4 }}>
-                <Card className="hover:border-primary/50 transition-colors cursor-pointer h-full">
+          <motion.div whileHover={{ y: -4 }}>
+            <Card 
+              onClick={() => navigate("/solution/treatment")}
+              className="hover:border-primary/50 transition-colors cursor-pointer h-full">
                   <CardHeader>
                     <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-4">
                       <Recycle className="h-6 w-6" />
@@ -47,14 +48,12 @@ export default function Solutions() {
                     Strict implementation of Sewage Treatment Plants (STPs) and Effluent Treatment Plants (ETPs) for all municipalities and industries before discharge.
                   </CardContent>
                 </Card>
-              </motion.div>
-            </a>
-          </Link>
+            </motion.div>
 
-          <Link href="/solution/afforestation">
-            <a>
-              <motion.div whileHover={{ y: -4 }}>
-                <Card className="hover:border-primary/50 transition-colors cursor-pointer h-full">
+          <motion.div whileHover={{ y: -4 }}>
+            <Card 
+              onClick={() => navigate("/solution/afforestation")}
+              className="hover:border-primary/50 transition-colors cursor-pointer h-full">
                   <CardHeader>
                     <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600 mb-4">
                       <TreePine className="h-6 w-6" />
@@ -65,14 +64,12 @@ export default function Solutions() {
                     Planting trees along river banks prevents soil erosion and acts as a natural buffer, filtering runoff water before it enters the river.
                   </CardContent>
                 </Card>
-              </motion.div>
-            </a>
-          </Link>
+            </motion.div>
 
-          <Link href="/solution/awareness">
-            <a>
-              <motion.div whileHover={{ y: -4 }}>
-                <Card className="hover:border-primary/50 transition-colors cursor-pointer h-full">
+          <motion.div whileHover={{ y: -4 }}>
+            <Card 
+              onClick={() => navigate("/solution/awareness")}
+              className="hover:border-primary/50 transition-colors cursor-pointer h-full">
                   <CardHeader>
                     <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center text-amber-600 mb-4">
                       <Megaphone className="h-6 w-6" />
@@ -83,14 +80,12 @@ export default function Solutions() {
                     Educating citizens about proper waste disposal, stopping idol immersion, and reducing plastic use to prevent river clogging.
                   </CardContent>
                 </Card>
-              </motion.div>
-            </a>
-          </Link>
+            </motion.div>
 
-          <Link href="/solution/rainwater">
-            <a>
-              <motion.div whileHover={{ y: -4 }}>
-                <Card className="hover:border-primary/50 transition-colors cursor-pointer h-full">
+          <motion.div whileHover={{ y: -4 }}>
+            <Card 
+              onClick={() => navigate("/solution/rainwater")}
+              className="hover:border-primary/50 transition-colors cursor-pointer h-full">
                   <CardHeader>
                     <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 mb-4">
                       <Droplet className="h-6 w-6" />
@@ -101,9 +96,7 @@ export default function Solutions() {
                     Capturing rainwater helps recharge groundwater levels, diluting pollutants in aquifers and ensuring water security.
                   </CardContent>
                 </Card>
-              </motion.div>
-            </a>
-          </Link>
+            </motion.div>
         </div>
       </div>
     </Layout>

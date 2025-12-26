@@ -2,8 +2,8 @@ import { Layout } from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { MapPin, AlertCircle } from "lucide-react";
-import { Link } from "wouter";
+import { MapPin } from "lucide-react";
+import { useLocation } from "wouter";
 import { motion } from "framer-motion";
 
 const cities = [
@@ -58,6 +58,8 @@ const cities = [
 ];
 
 export default function PollutedCities() {
+  const [, navigate] = useLocation();
+  
   return (
     <Layout>
       <div className="container mx-auto px-4 py-16">
@@ -70,15 +72,16 @@ export default function PollutedCities() {
           {cities.map((city, index) => {
             const citySlug = city.name.toLowerCase().replace(" ", "-");
             return (
-              <Link key={city.name} href={`/city/${citySlug}`}>
-                <a>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <Card className="overflow-hidden border-border/50 hover:shadow-xl transition-all duration-300 group cursor-pointer h-full">
+              <motion.div
+                key={city.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card 
+                  onClick={() => navigate(`/city/${citySlug}`)}
+                  className="overflow-hidden border-border/50 hover:shadow-xl transition-all duration-300 group cursor-pointer h-full">
                       <div className="relative h-48 overflow-hidden">
                         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10" />
                         <img 
@@ -116,9 +119,7 @@ export default function PollutedCities() {
                         </div>
                       </CardContent>
                     </Card>
-                  </motion.div>
-                </a>
-              </Link>
+              </motion.div>
             );
           })}
         </div>

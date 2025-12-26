@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import img from "@assets/generated_images/community_environmental_education.png";
+import img from "@assets/generated_images/government_policy_office_water_laws.png";
 
 export default function AwarenessEducationSolution() {
   return (

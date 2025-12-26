@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import img from "@assets/generated_images/industrial_pollution_urban_river.png";
+import img from "@assets/generated_images/surface_water_pollution_river.png";
 
 export default function HyderabadCity() {
   return (

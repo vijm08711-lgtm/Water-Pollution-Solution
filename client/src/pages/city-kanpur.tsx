@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import img from "@assets/generated_images/polluted_industrial_ganga_river.png";
+import img from "@assets/generated_images/kanpur_ganga_tannery_pollution.png";
 
 export default function KanpurCity() {
   return (

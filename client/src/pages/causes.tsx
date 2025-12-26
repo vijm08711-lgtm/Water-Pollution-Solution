@@ -2,10 +2,11 @@ import { Layout } from "@/components/layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Factory, Tractor, Trash2, Skull } from "lucide-react";
 import { motion } from "framer-motion";
-import { Link } from "wouter";
+import { useLocation } from "wouter";
 import pollutionImage from "@assets/generated_images/industrial_water_pollution_artistic.png";
 
 export default function Causes() {
+  const [, navigate] = useLocation();
   return (
     <Layout>
       <div className="bg-primary/5 py-20">
@@ -27,10 +28,10 @@ export default function Causes() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Link href="/cause/industrial">
-              <a>
-                <motion.div whileHover={{ y: -8 }}>
-                  <Card className="border-none shadow-lg hover:shadow-2xl transition-all bg-gradient-to-br from-white to-red-50/30 overflow-hidden group relative h-full cursor-pointer">
+            <motion.div whileHover={{ y: -8 }}>
+              <Card 
+                onClick={() => navigate("/cause/industrial")}
+                className="border-none shadow-lg hover:shadow-2xl transition-all bg-gradient-to-br from-white to-red-50/30 overflow-hidden group relative h-full cursor-pointer">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-destructive to-red-400" />
                     <div className="absolute -top-8 -right-8 w-32 h-32 bg-destructive/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-300" />
                     <CardHeader className="relative">
@@ -47,14 +48,12 @@ export default function Causes() {
                       </p>
                     </CardContent>
                   </Card>
-                </motion.div>
-              </a>
-            </Link>
+            </motion.div>
 
-            <Link href="/cause/domestic">
-              <a>
-                <motion.div whileHover={{ y: -8 }}>
-                  <Card className="border-none shadow-lg hover:shadow-2xl transition-all bg-gradient-to-br from-white to-amber-50/30 overflow-hidden group relative h-full cursor-pointer">
+            <motion.div whileHover={{ y: -8 }}>
+              <Card 
+                onClick={() => navigate("/cause/domestic")}
+                className="border-none shadow-lg hover:shadow-2xl transition-all bg-gradient-to-br from-white to-amber-50/30 overflow-hidden group relative h-full cursor-pointer">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400" />
                     <div className="absolute -top-8 -right-8 w-32 h-32 bg-amber-200/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-300" />
                     <CardHeader className="relative">
@@ -71,14 +70,12 @@ export default function Causes() {
                       </p>
                     </CardContent>
                   </Card>
-                </motion.div>
-              </a>
-            </Link>
+            </motion.div>
 
-            <Link href="/cause/agricultural">
-              <a>
-                <motion.div whileHover={{ y: -8 }}>
-                  <Card className="border-none shadow-lg hover:shadow-2xl transition-all bg-gradient-to-br from-white to-green-50/30 overflow-hidden group relative h-full cursor-pointer">
+            <motion.div whileHover={{ y: -8 }}>
+              <Card 
+                onClick={() => navigate("/cause/agricultural")}
+                className="border-none shadow-lg hover:shadow-2xl transition-all bg-gradient-to-br from-white to-green-50/30 overflow-hidden group relative h-full cursor-pointer">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-600 to-emerald-500" />
                     <div className="absolute -top-8 -right-8 w-32 h-32 bg-green-200/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-300" />
                     <CardHeader className="relative">
@@ -95,14 +92,12 @@ export default function Causes() {
                       </p>
                     </CardContent>
                   </Card>
-                </motion.div>
-              </a>
-            </Link>
+            </motion.div>
 
-            <Link href="/cause/religious">
-              <a>
-                <motion.div whileHover={{ y: -8 }}>
-                  <Card className="border-none shadow-lg hover:shadow-2xl transition-all bg-gradient-to-br from-white to-purple-50/30 overflow-hidden group relative h-full cursor-pointer">
+            <motion.div whileHover={{ y: -8 }}>
+              <Card 
+                onClick={() => navigate("/cause/religious")}
+                className="border-none shadow-lg hover:shadow-2xl transition-all bg-gradient-to-br from-white to-purple-50/30 overflow-hidden group relative h-full cursor-pointer">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-pink-500" />
                     <div className="absolute -top-8 -right-8 w-32 h-32 bg-purple-200/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-300" />
                     <CardHeader className="relative">
@@ -119,9 +114,7 @@ export default function Causes() {
                       </p>
                     </CardContent>
                   </Card>
-                </motion.div>
-              </a>
-            </Link>
+            </motion.div>
           </div>
         </div>
       </div>

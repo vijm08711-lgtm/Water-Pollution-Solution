@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Layout } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Link } from "wouter";
+import { useLocation } from "wouter";
 import { ArrowRight, Droplets, AlertTriangle, Leaf } from "lucide-react";
 import heroImage from "@assets/generated_images/pristine_river_water_in_india_sunlight.png";
 import sdg6 from "@assets/generated_images/sdg_6_clean_water_goal.png";
@@ -11,6 +11,7 @@ import sdg14 from "@assets/generated_images/sdg_14_life_below_water.png";
 import sdg15 from "@assets/generated_images/sdg_15_life_on_land.png";
 
 export default function Home() {
+  const [, navigate] = useLocation();
   return (
     <Layout>
       {/* Hero Section */}
@@ -61,16 +62,12 @@ export default function Home() {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="flex flex-col sm:flex-row gap-6 justify-center"
             >
-              <Link href="/causes">
-                <Button size="lg" className="bg-gradient-to-r from-primary to-accent hover:shadow-2xl text-white border-0 text-lg px-10 py-7 h-auto rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105">
-                  Explore Causes
-                </Button>
-              </Link>
-              <Link href="/cities">
-                <Button size="lg" className="bg-white/20 backdrop-blur-md hover:bg-white/30 border border-white/50 text-white text-lg px-10 py-7 h-auto rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105">
-                  Case Studies in India
-                </Button>
-              </Link>
+              <Button onClick={() => navigate("/causes")} size="lg" className="bg-gradient-to-r from-primary to-accent hover:shadow-2xl text-white border-0 text-lg px-10 py-7 h-auto rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer">
+                Explore Causes
+              </Button>
+              <Button onClick={() => navigate("/cities")} size="lg" className="bg-white/20 backdrop-blur-md hover:bg-white/30 border border-white/50 text-white text-lg px-10 py-7 h-auto rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer">
+                Case Studies in India
+              </Button>
             </motion.div>
           </motion.div>
         </div>
@@ -168,11 +165,9 @@ export default function Home() {
               </p>
             </motion.div>
             
-            <Link href="/effects">
-              <Button className="bg-gradient-to-r from-primary to-accent hover:shadow-2xl text-white border-0 text-lg px-8 py-6 h-auto rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105">
-                Learn about the effects <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
+            <Button onClick={() => navigate("/effects")} className="bg-gradient-to-r from-primary to-accent hover:shadow-2xl text-white border-0 text-lg px-8 py-6 h-auto rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer">
+              Learn about the effects <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
           </motion.div>
           
           <motion.div 
@@ -220,93 +215,81 @@ export default function Home() {
           </motion.div>
 
           <div className="grid md:grid-cols-4 gap-8">
-            <Link href="/sdg/6">
-              <a>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -8 }}
-                >
-                  <Card className="border-none shadow-lg hover:shadow-2xl transition-all h-full overflow-hidden group cursor-pointer">
-                    <div className="relative h-48 overflow-hidden">
-                      <img src={sdg6} alt="SDG 6" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                    </div>
-                    <CardContent className="p-6 text-center">
-                      <h3 className="text-xl font-bold mb-2 font-serif">SDG 6: Clean Water & Sanitation</h3>
-                      <p className="text-muted-foreground text-sm">Ensure access to water and sanitation for all</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </a>
-            </Link>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8 }}
+              onClick={() => navigate("/sdg/6")}
+            >
+              <Card className="border-none shadow-lg hover:shadow-2xl transition-all h-full overflow-hidden group cursor-pointer">
+                <div className="relative h-48 overflow-hidden">
+                  <img src={sdg6} alt="SDG 6" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <CardContent className="p-6 text-center">
+                  <h3 className="text-xl font-bold mb-2 font-serif">SDG 6: Clean Water & Sanitation</h3>
+                  <p className="text-muted-foreground text-sm">Ensure access to water and sanitation for all</p>
+                </CardContent>
+              </Card>
+            </motion.div>
 
-            <Link href="/sdg/13">
-              <a>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -8 }}
-                >
-                  <Card className="border-none shadow-lg hover:shadow-2xl transition-all h-full overflow-hidden group cursor-pointer">
-                    <div className="relative h-48 overflow-hidden">
-                      <img src={sdg13} alt="SDG 13" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                    </div>
-                    <CardContent className="p-6 text-center">
-                      <h3 className="text-xl font-bold mb-2 font-serif">SDG 13: Climate Action</h3>
-                      <p className="text-muted-foreground text-sm">Combat climate change and its impacts</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </a>
-            </Link>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8 }}
+              onClick={() => navigate("/sdg/13")}
+            >
+              <Card className="border-none shadow-lg hover:shadow-2xl transition-all h-full overflow-hidden group cursor-pointer">
+                <div className="relative h-48 overflow-hidden">
+                  <img src={sdg13} alt="SDG 13" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <CardContent className="p-6 text-center">
+                  <h3 className="text-xl font-bold mb-2 font-serif">SDG 13: Climate Action</h3>
+                  <p className="text-muted-foreground text-sm">Combat climate change and its impacts</p>
+                </CardContent>
+              </Card>
+            </motion.div>
 
-            <Link href="/sdg/14">
-              <a>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -8 }}
-                >
-                  <Card className="border-none shadow-lg hover:shadow-2xl transition-all h-full overflow-hidden group cursor-pointer">
-                    <div className="relative h-48 overflow-hidden">
-                      <img src={sdg14} alt="SDG 14" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                    </div>
-                    <CardContent className="p-6 text-center">
-                      <h3 className="text-xl font-bold mb-2 font-serif">SDG 14: Life Below Water</h3>
-                      <p className="text-muted-foreground text-sm">Protect and sustain ocean and marine life</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </a>
-            </Link>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8 }}
+              onClick={() => navigate("/sdg/14")}
+            >
+              <Card className="border-none shadow-lg hover:shadow-2xl transition-all h-full overflow-hidden group cursor-pointer">
+                <div className="relative h-48 overflow-hidden">
+                  <img src={sdg14} alt="SDG 14" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <CardContent className="p-6 text-center">
+                  <h3 className="text-xl font-bold mb-2 font-serif">SDG 14: Life Below Water</h3>
+                  <p className="text-muted-foreground text-sm">Protect and sustain ocean and marine life</p>
+                </CardContent>
+              </Card>
+            </motion.div>
 
-            <Link href="/sdg/15">
-              <a>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -8 }}
-                >
-                  <Card className="border-none shadow-lg hover:shadow-2xl transition-all h-full overflow-hidden group cursor-pointer">
-                    <div className="relative h-48 overflow-hidden">
-                      <img src={sdg15} alt="SDG 15" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                    </div>
-                    <CardContent className="p-6 text-center">
-                      <h3 className="text-xl font-bold mb-2 font-serif">SDG 15: Life on Land</h3>
-                      <p className="text-muted-foreground text-sm">Protect terrestrial ecosystems and biodiversity</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </a>
-            </Link>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8 }}
+              onClick={() => navigate("/sdg/15")}
+            >
+              <Card className="border-none shadow-lg hover:shadow-2xl transition-all h-full overflow-hidden group cursor-pointer">
+                <div className="relative h-48 overflow-hidden">
+                  <img src={sdg15} alt="SDG 15" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <CardContent className="p-6 text-center">
+                  <h3 className="text-xl font-bold mb-2 font-serif">SDG 15: Life on Land</h3>
+                  <p className="text-muted-foreground text-sm">Protect terrestrial ecosystems and biodiversity</p>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
         </div>
       </section>

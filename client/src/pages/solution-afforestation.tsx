@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import img from "@assets/generated_images/green_forest_natural_environment.png";
+import img from "@assets/generated_images/environmental_protection_and_conservation.png";
 
 export default function AfforestationSolution() {
   return (

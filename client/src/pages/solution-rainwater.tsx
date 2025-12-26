@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import img from "@assets/generated_images/water_conservation_rainwater_harvest.png";
+import img from "@assets/generated_images/pristine_river_water_in_india_sunlight.png";
 
 export default function RainwaterHarvestingSolution() {
   return (
