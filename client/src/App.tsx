@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
-import WhatIsPollution from "@/pages/what-is-pollution";
+import About from "@/pages/about";
 import Causes from "@/pages/causes";
 import PollutedCities from "@/pages/polluted-cities";
 import Effects from "@/pages/effects";
@@ -44,7 +44,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/about" component={WhatIsPollution} />
+      <Route path="/about" component={About} />
       <Route path="/causes" component={Causes} />
       <Route path="/cities" component={PollutedCities} />
       <Route path="/effects" component={Effects} />

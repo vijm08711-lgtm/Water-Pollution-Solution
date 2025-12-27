@@ -1,4 +1,4 @@
-import { Link, useLocation } from "wouter";
+import { useLocation } from "wouter";
 import { Menu, X, Droplets, Leaf, Activity, Building2, Gavel, BarChart3, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
@@ -18,7 +18,7 @@ const navItems = [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const [location] = useLocation();
+  const [location, navigate] = useLocation();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -40,26 +40,24 @@ export function Layout({ children }: { children: React.ReactNode }) {
         )}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
-          <Link href="/">
-            <a className="flex items-center gap-2 text-2xl font-serif font-bold text-primary cursor-pointer">
-              <Droplets className="h-8 w-8" />
-              <span>CleanWater<span className="text-foreground">India</span></span>
-            </a>
-          </Link>
+          <button onClick={() => navigate("/")} className="flex items-center gap-2 text-2xl font-serif font-bold text-primary cursor-pointer hover:opacity-80 transition-opacity">
+            <Droplets className="h-8 w-8" />
+            <span>CleanWater<span className="text-foreground">India</span></span>
+          </button>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
-              <Link key={item.path} href={item.path}>
-                <a
-                  className={cn(
-                    "px-3 py-2 rounded-md text-sm font-medium transition-colors hover:text-primary hover:bg-primary/5",
-                    location === item.path ? "text-primary bg-primary/10 font-semibold" : "text-muted-foreground"
-                  )}
-                >
-                  {item.label}
-                </a>
-              </Link>
+              <button
+                key={item.path}
+                onClick={() => navigate(item.path)}
+                className={cn(
+                  "px-3 py-2 rounded-md text-sm font-medium transition-colors hover:text-primary hover:bg-primary/5 cursor-pointer",
+                  location === item.path ? "text-primary bg-primary/10 font-semibold" : "text-muted-foreground"
+                )}
+              >
+                {item.label}
+              </button>
             ))}
           </nav>
 
@@ -73,17 +71,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <SheetContent>
               <div className="flex flex-col gap-4 mt-8">
                 {navItems.map((item) => (
-                  <Link key={item.path} href={item.path}>
-                    <a
-                      className={cn(
-                        "flex items-center gap-4 px-4 py-3 rounded-lg text-lg font-medium transition-colors",
-                        location === item.path ? "bg-primary/10 text-primary" : "text-muted-foreground hover:bg-muted"
-                      )}
-                    >
-                      <item.icon className="h-5 w-5" />
-                      {item.label}
-                    </a>
-                  </Link>
+                  <button
+                    key={item.path}
+                    onClick={() => navigate(item.path)}
+                    className={cn(
+                      "flex items-center gap-4 px-4 py-3 rounded-lg text-lg font-medium transition-colors cursor-pointer w-full",
+                      location === item.path ? "bg-primary/10 text-primary" : "text-muted-foreground hover:bg-muted"
+                    )}
+                  >
+                    <item.icon className="h-5 w-5" />
+                    {item.label}
+                  </button>
                 ))}
               </div>
             </SheetContent>
@@ -114,20 +112,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div>
             <h4 className="font-bold text-lg mb-4 text-cyan-300">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link href="/causes"><a className="text-gray-300 hover:text-cyan-300 transition-colors font-light">Causes of Pollution</a></Link></li>
-              <li><Link href="/solutions"><a className="text-gray-300 hover:text-cyan-300 transition-colors font-light">Sustainable Solutions</a></Link></li>
-              <li><Link href="/actions"><a className="text-gray-300 hover:text-cyan-300 transition-colors font-light">Government Initiatives</a></Link></li>
-              <li><Link href="/statistics"><a className="text-gray-300 hover:text-cyan-300 transition-colors font-light">Data & Statistics</a></Link></li>
+              <li><button onClick={() => navigate("/causes")} className="text-gray-300 hover:text-cyan-300 transition-colors font-light cursor-pointer">Causes of Pollution</button></li>
+              <li><button onClick={() => navigate("/solutions")} className="text-gray-300 hover:text-cyan-300 transition-colors font-light cursor-pointer">Sustainable Solutions</button></li>
+              <li><button onClick={() => navigate("/actions")} className="text-gray-300 hover:text-cyan-300 transition-colors font-light cursor-pointer">Government Initiatives</button></li>
+              <li><button onClick={() => navigate("/statistics")} className="text-gray-300 hover:text-cyan-300 transition-colors font-light cursor-pointer">Data & Statistics</button></li>
             </ul>
           </div>
           <div>
             <h4 className="font-bold text-lg mb-4 text-cyan-300">Contact</h4>
             <p className="text-gray-300 mb-2 font-light">Have questions or want to contribute?</p>
-            <Link href="/contact">
-              <Button className="mt-2 w-full md:w-auto bg-gradient-to-r from-cyan-400 to-blue-400 hover:from-cyan-500 hover:to-blue-500 text-slate-900 font-semibold border-0 shadow-lg transition-all hover:shadow-2xl">
-                Get in Touch
-              </Button>
-            </Link>
+            <Button onClick={() => navigate("/contact")} className="mt-2 w-full md:w-auto bg-gradient-to-r from-cyan-400 to-blue-400 hover:from-cyan-500 hover:to-blue-500 text-slate-900 font-semibold border-0 shadow-lg transition-all hover:shadow-2xl cursor-pointer">
+              Get in Touch
+            </Button>
           </div>
         </div>
         <div className="container mx-auto px-4 mt-12 pt-8 border-t border-white/10 text-center text-gray-400 text-sm font-light">
