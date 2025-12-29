@@ -8,7 +8,7 @@ import { ArrowRight, Droplet, Beaker, Waves, Leaf, Trash2, Flame, Wind, AlertCir
 const pollutionTypes = [
   {
     id: "surface",
-    title: "Surface Water Pollution",
+    title: "Surface DriniWater Pollution",
     description: "Contamination of rivers, lakes, reservoirs, and oceans visible to the naked eye",
     icon: Waves,
     color: "from-blue-500 to-cyan-500",
